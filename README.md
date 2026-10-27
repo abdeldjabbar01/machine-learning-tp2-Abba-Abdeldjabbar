@@ -25,35 +25,49 @@ Implementation of standardized PCA from scratch (NumPy/Pandas), compared with Sc
 
 ---
 
-## Part B – Analysis & Visualization
+## Part B – PCA with Scikit-learn
 
 | Step | Description |
 |------|-------------|
-| 10 | Scatter plot: students in PC1–PC2 space |
-| 11 | Feature loadings (variable contributions) |
-| 12 | Reconstruction from 2 PCs (inverse transform) |
-| 13 | Reconstruction error (Frobenius norm) |
-| 14 | Scree plot (eigenvalues) |
-| 15 | Verify with `sklearn.decomposition.PCA` |
-| 16 | Correlation circle (loadings on unit circle) |
-| 17 | Compare manual vs sklearn — explain sign differences |
-| 18 | Summary & interpretation |
+| 10 | Apply `sklearn.decomposition.PCA` on standardized data |
+| 11 | Reduce to 2 components |
+| 12 | Transformed coordinates of the students |
+| 13 | Explained variance ratio & cumulative |
+
+## Part C – Comparison & Interpretation
+
+| Step | Description |
+|------|-------------|
+| 14 | Compare coordinates (manual vs sklearn) |
+| 15 | Compare eigenvalues & explained variance ratios |
+| 16 | Plot students in 2D with both implementations |
+| 17 | Explain differences (sign changes) |
+| 18 | Variance retained by the first 2 PCs |
+
+## Part D – Extra Analysis
+
+| Step | Description |
+|------|-------------|
+| 19 | Feature loadings |
+| 20 | Correlation circle |
+| 21 | Scree plot |
+| 22 | Reconstruction from 2 PCs |
+| 23 | Reconstruction error (Frobenius norm) |
+| 24 | Summary & interpretation |
 
 ---
 
 ## Key Findings
 
-- **PC1 (Learning Level):** Overall academic mastery — all subjects load positively
-- **PC2 (Learning Profile):** Theoretical (Math/Algorithms) vs Applied (Statistics/Programming)
-- **2D representation** captures 99.5% of variance with low reconstruction error
-- **Manual PCA = sklearn** (up to arbitrary sign flips — subspace identical)
+- **PC1 (Learning Level):** overall level of a student — all subjects have the same sign and almost equal weight
+- **PC2 (Learning Profile):** Statistics vs Programming/Algorithms (Mathematics ≈ neutral)
+- **2D representation** captures 99.5% of variance (reconstruction error ≈ 0.32)
+- **Manual PCA = sklearn** (same eigenvalues and ratios; only PC1 is sign-flipped — the subspace is identical)
 
 ---
 
 ## Requirements
 
-- Python 3
-- `numpy`, `pandas`, `scikit-learn`, `matplotlib`
-
 ```bash
 pip install numpy pandas scikit-learn matplotlib
+```
